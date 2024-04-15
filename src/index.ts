@@ -127,6 +127,9 @@ class Shop {
         this._items = [
             new Vehicle('Tesla Model S', 79000, 'Electric car'),
             new Vehicle('Mazda CX-5', 25000, 'SUV'),
+            new Vehicle('Toyota Camry', 24000, 'Sedan'),
+            new Vehicle('Tesla Model S', 79000, 'Electric car'),
+            new Vehicle('Mazda CX-5', 25000, 'SUV'),
             new Vehicle('Toyota Camry', 24000, 'Sedan')
         ];
         this.displayItems();

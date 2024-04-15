@@ -3,10 +3,15 @@ body {
     display: flex;
     justify-content: space-between; /* Aligns children (shop and cart) side by side */
     padding: 10px;
+    background-color: rgb(45, 0, 99);
+    background-image: url('images/road-sunset-long-exposure-scenery-uhdpaper.com-4K-6.991.jpg');
+    background-size: cover; /* Makes the image cover the entire body */
 }
 #shop-section, #cart-section {
     flex: 1;
     margin: 5px;
+    padding: 10px;
+    background-color: white;
 }
 #cart-section {
     border: 2px solid #ccc; /* Gives the cart section a distinct border */
