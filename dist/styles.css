@@ -6,21 +6,42 @@ body {
     background-color: rgb(45, 0, 99);
     background-image: url('images/road-sunset-long-exposure-scenery-uhdpaper.com-4K-6.991.jpg');
     background-size: cover; /* Makes the image cover the entire body */
+    font-weight: bold;
 }
 #shop-section, #cart-section {
     flex: 1;
     margin: 5px;
     padding: 10px;
-    background-color: white;
+    
 }
 #cart-section {
     flex: 0.5;
-    border: 2px solid #ccc; /* Gives the cart section a distinct border */
+    border: 2px solid #de0505; /* Gives the cart section a distinct border */
     padding: 10px;
     min-width: 300px; /* Ensures the cart doesn't become too narrow */
+    background-color: rgb(162, 4, 126,  0.5);
+    border-radius: 5%;
 }
 #shop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+}
+
+#shop > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(162, 4, 126, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ba349b;
+    border-radius: 10%;
+}
+#shop img {
+    width: 250px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    object-fit: cover;
+    border-radius: 10%;
 }

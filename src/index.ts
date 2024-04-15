@@ -5,19 +5,22 @@ class Vehicle {
     private _name: string;
     private _price: number;
     private _description: string;
+    private _image: string;
 
-    constructor(name: string, price: number, description: string) {
+    constructor(name: string, price: number, description: string, image: string) {
         this._id = uuidv4();
         this._name = name;
         this._price = price;
         this._description = description;
+        this._image = image;
     }
 
     itemElement(): HTMLElement {
         const itemDiv = document.createElement("div");
         itemDiv.className = "item";
         itemDiv.innerHTML = `
-            <h3>${this._name}</h3>  
+            <h3>${this._name}</h3>
+            <img src="${this._image}" alt="${this._name}">  
             <p>${this._description}</p>  
             <p>Price: $${this._price.toFixed(2)}</p>  
             <button onclick="window.shop.addItemToCart('${this._id}')">Add to Cart</button>  
@@ -124,12 +127,12 @@ class Shop {
 
     constructor() {
         this._items = [
-            new Vehicle('Tesla Model S', 79000, 'Electric car'),
-            new Vehicle('Mazda CX-5', 25000, 'SUV'),
-            new Vehicle('Toyota Camry', 24000, 'Sedan'),
-            new Vehicle('Tesla Model S', 79000, 'Electric car'),
-            new Vehicle('Mazda CX-5', 25000, 'SUV'),
-            new Vehicle('Toyota Camry', 24000, 'Sedan')
+            new Vehicle('Tesla Model S', 79000, 'Electric car', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
+            new Vehicle('Mazda CX-5', 25000, 'SUV', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
+            new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
+            new Vehicle('Tesla Model S', 79000, 'Electric car', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
+            new Vehicle('Mazda CX-5', 25000, 'SUV', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
+            new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-tesla-model-s-107-6572200e43fa1.jpg')
         ];
         this.displayItems();
     }
