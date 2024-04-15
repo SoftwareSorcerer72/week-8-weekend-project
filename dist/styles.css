@@ -14,7 +14,13 @@ body {
     background-color: white;
 }
 #cart-section {
+    flex: 0.5;
     border: 2px solid #ccc; /* Gives the cart section a distinct border */
     padding: 10px;
     min-width: 300px; /* Ensures the cart doesn't become too narrow */
+}
+#shop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }

@@ -21,8 +21,7 @@ class Vehicle {
             <p>${this._description}</p>  
             <p>Price: $${this._price.toFixed(2)}</p>  
             <button onclick="window.shop.addItemToCart('${this._id}')">Add to Cart</button>  
-            <button onclick="window.shop.removeOneItemFromCart('${this._id}')">Remove One</button>  
-            <button onclick="window.shop.removeAllItemsFromCart('${this._id}')">Remove All</button>  
+            
         `;
         return itemDiv;
     }
