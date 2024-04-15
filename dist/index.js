@@ -1,23 +1,15 @@
-import { v4 as uuidv4 } from 'uuid';
-
-
-
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const uuid_1 = require("uuid");
 //Vehicle class Start
 class Vehicle {
-    private _id: string;
-    private _name: string;
-    private _price: number;
-    private _description: string;
-
-    constructor(name: string, price: number, description: string) {
-        this._id = uuidv4();
+    constructor(name, price, description) {
+        this._id = (0, uuid_1.v4)();
         this._name = name;
         this._price = price;
         this._description = description;
     }
-
-    itemElement(): HTMLElement {
+    itemElement() {
         const itemDiv = document.createElement("div");
         itemDiv.className = "item";
         itemDiv.innerHTML = `
@@ -28,101 +20,77 @@ class Vehicle {
         `;
         return itemDiv;
     }
-
-    get id(): string {
+    get id() {
         return this._id;
     }
-
-    get name(): string {
+    get name() {
         return this._name;
     }
-
-    set name(value: string) {
+    set name(value) {
         this._name = value;
     }
-
-    get price(): number {
+    get price() {
         return this._price;
     }
-
-    set price(value: number) {
+    set price(value) {
         this._price = value;
     }
-
-    get description(): string {
+    get description() {
         return this._description;
     }
-
-    set description(value: string) {
+    set description(value) {
         this._description = value;
     }
 }
 //Vehicle class end
-
 //User class start
 class User {
-    private _id: string;
-    private _name: string;
-    private _age: number;
-    private _cart: Vehicle[];
-
-    constructor(name: string, age: number) {
-        this._id = uuidv4();
+    constructor(name, age) {
+        this._id = (0, uuid_1.v4)();
         this._name = name;
         this._age = age;
         this._cart = [];
     }
-
-    static createUser(): User | null {
-        const nameInput = <HTMLInputElement>document.getElementById("name");
-        const ageInput = <HTMLInputElement>document.getElementById("age");
+    static createUser() {
+        const nameInput = document.getElementById("name");
+        const ageInput = document.getElementById("age");
         const name = nameInput.value.trim();
         const age = parseInt(ageInput.value);
-
         if (name && age) {
             return new User(name, age);
-        } else {
+        }
+        else {
             return null;
         }
     }
-
-    get id(): string {
+    get id() {
         return this._id;
     }
-
-    get name(): string {
+    get name() {
         return this._name;
     }
-
-    set name(value: string) {
+    set name(value) {
         this._name = value;
     }
-
-    get age(): number {
+    get age() {
         return this._age;
     }
-
-    set age(value: number) {
+    set age(value) {
         this._age = value;
     }
-
-    get cart(): Vehicle[] {
+    get cart() {
         return this._cart;
     }
-
-    set cart(value: Vehicle[]) {
+    set cart(value) {
         this._cart = value;
     }
-
-    addToCart(item: Vehicle): void {
+    addToCart(item) {
         this._cart.push(item);
     }
-
-    removeFromCart(itemId: string): void {
+    removeFromCart(itemId) {
         this._cart = this._cart.filter(item => item.id !== itemId);
     }
-
-    removeQuantityFromCart(itemId: string, quantity: number): void {
+    removeQuantityFromCart(itemId, quantity) {
         let itemsToRemove = quantity;
         this._cart = this._cart.filter(item => {
             if (item.id === itemId && itemsToRemove > 0) {
@@ -132,21 +100,16 @@ class User {
             return true;
         });
     }
-
-    cartTotal(): number {
+    cartTotal() {
         return this._cart.reduce((total, item) => total + item.price, 0);
     }
-
-    printCart(): void {
+    printCart() {
         console.log(this._cart);
     }
 }
 //User class end
-
 //Shop class start
 class Shop {
-    private _items: Vehicle[];
-
     constructor() {
         this._items = [
             new Vehicle('Tesla Model S', 79000, 'Electric car'),
@@ -154,49 +117,35 @@ class Shop {
             new Vehicle('Toyota Camry', 24000, 'Sedan')
         ];
     }
-
-    get items(): Vehicle[] {
+    get items() {
         return this._items;
     }
 }
 //Shop class end
-
 let shop = new Shop();
-
-
-
 // Create a User
 let user = new User("Mike Welborn", 33);
-
 // Add items from the shop to the user's cart
 let shopItems = shop.items;
-user.addToCart(shopItems[0]); 
-user.addToCart(shopItems[1]); 
-user.addToCart(shopItems[2]); 
-
+user.addToCart(shopItems[0]);
+user.addToCart(shopItems[1]);
+user.addToCart(shopItems[2]);
 // Print the cart
 user.printCart();
-
 // Remove all of a singular item from the cart
-user.removeFromCart(shopItems[0].id); 
-
+user.removeFromCart(shopItems[0].id);
 // Print the cart to verify the item was removed
 user.printCart();
-
 // Add 5 of an item to the cart
 for (let i = 0; i < 5; i++) {
-    user.addToCart(shopItems[1]); 
+    user.addToCart(shopItems[1]);
 }
-
 // Print the cart 
 user.printCart();
-
 // Remove a quantity from the cart
-user.removeQuantityFromCart(shopItems[1].id, 3); 
-
+user.removeQuantityFromCart(shopItems[1].id, 3);
 // Print the cart to verify the items were removed
 user.printCart();
-
 // Calculate the total price of the items in the cart
 let total = user.cartTotal();
 console.log(`Total: $${total}`);

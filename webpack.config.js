@@ -7,6 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  devtool: 'inline-source-map',  // This is helpful for debugging.
   resolve: {
     extensions: ['.ts', '.js']
   },
@@ -29,8 +30,12 @@ module.exports = {
     })
   ],
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     compress: true,
-    port: 8080
+    port: 8080,  // You can specify any port you prefer
+    open: true,  // Automatically opens the browser
+    hot: true   // Enable hot module replacement
   }
 };
