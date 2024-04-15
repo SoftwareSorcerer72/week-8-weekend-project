@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-//Vehicle class Start
-class Vehicle {
+//Item class Start
+class Item {
     private _id: string;
     private _name: string;
     private _price: number;
@@ -57,14 +57,14 @@ class Vehicle {
         this._description = value;
     }
 }
-//Vehicle class end
+//Item class end
 
 //User class start
 class User {
     private _id: string;
     private _name: string;
     private _age: number;
-    private _cart: Vehicle[];
+    private _cart: Item[];
 
     constructor(name: string, age: number) {
         this._id = uuidv4();
@@ -106,15 +106,15 @@ class User {
         this._age = value;
     }
 
-    get cart(): Vehicle[] {
+    get cart(): Item[] {
         return this._cart;
     }
 
-    set cart(value: Vehicle[]) {
+    set cart(value: Item[]) {
         this._cart = value;
     }
 
-    addToCart(item: Vehicle): void {
+    addToCart(item: Item): void {
         this._cart.push(item);
     }
 
@@ -145,17 +145,17 @@ class User {
 
 //Shop class start
 class Shop {
-    private _items: Vehicle[];
+    private _items: Item[];
 
     constructor() {
         this._items = [
-            new Vehicle('Tesla Model S', 79000, 'Electric car'),
-            new Vehicle('Mazda CX-5', 25000, 'SUV'),
-            new Vehicle('Toyota Camry', 24000, 'Sedan')
+            new Item('Tesla Model S', 79000, 'Electric car'),
+            new Item('Mazda CX-5', 25000, 'SUV'),
+            new Item('Toyota Camry', 24000, 'Sedan')
         ];
     }
 
-    get items(): Vehicle[] {
+    get items(): Item[] {
         return this._items;
     }
 }
