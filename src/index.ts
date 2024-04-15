@@ -61,6 +61,19 @@ class User {
         this._cart = [];
     }
 
+    static createUser(): User | null {
+        const nameInput = <HTMLInputElement>document.getElementById("name");
+        const ageInput = <HTMLInputElement>document.getElementById("age");
+        const name = nameInput.value.trim();
+        const age = parseInt(ageInput.value);
+
+        if (name && age) {
+            return new User(name, age);
+        } else {
+            return null;
+        }
+    }
+
     get id(): string {
         return this._id;
     }
