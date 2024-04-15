@@ -15,7 +15,7 @@ body {
     
 }
 #cart-section {
-    flex: 0.5;
+    flex: 0.1;
     border: 2px solid #de0505; /* Gives the cart section a distinct border */
     padding: 10px;
     min-width: 300px; /* Ensures the cart doesn't become too narrow */
