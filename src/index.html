@@ -6,6 +6,20 @@
     <title>Shopping App</title>
     <style>
         .hidden { display: none; }
+        body {
+            display: flex;
+            justify-content: space-between; /* Aligns children (shop and cart) side by side */
+            padding: 10px;
+        }
+        #shop-section, #cart-section {
+            flex: 1;
+            margin: 5px;
+        }
+        #cart-section {
+            border: 2px solid #ccc; /* Gives the cart section a distinct border */
+            padding: 10px;
+            min-width: 300px; /* Ensures the cart doesn't become too narrow */
+        }
     </style>
 </head>
 <body>
@@ -16,9 +30,13 @@
     </div>
     <div id="shop-section" class="hidden">
         <div id="shop"></div>
+    </div>
+    <div id="cart-section" class="hidden">
+        <h3>Cart</h3>
         <div id="cart"></div>
     </div>
 
     <script src="bundle.js"></script>
 </body>
 </html>
+

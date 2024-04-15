@@ -142,6 +142,7 @@ class Shop {
         this.myUser = new User(name, age);
         document.getElementById('login-section')!.classList.add('hidden');
         document.getElementById('shop-section')!.classList.remove('hidden');
+        document.getElementById('cart-section')!.classList.remove('hidden'); // Make sure to unhide the cart section too
     }
 
     addItemToCart(itemId: string): void {
