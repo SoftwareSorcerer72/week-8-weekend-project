@@ -128,11 +128,12 @@ class Shop {
     constructor() {
         this._items = [
             new Vehicle('Tesla Model S', 79000, 'Electric car', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
-            new Vehicle('Mazda CX-5', 25000, 'SUV', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
-            new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
-            new Vehicle('Tesla Model S', 79000, 'Electric car', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
-            new Vehicle('Mazda CX-5', 25000, 'SUV', './images/2024-tesla-model-s-107-6572200e43fa1.jpg'),
-            new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-tesla-model-s-107-6572200e43fa1.jpg')
+            new Vehicle('Mazda CX-5', 25000, 'SUV', './images/of0DAohc3MnJlNlzUGJvCt22M35x861BHBPBnukD.jpg'),
+            new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-toyota-camry-102-64cbc4858e198.jpg'),
+            
+            new Vehicle('Tesla Model X', 89990, 'Electric SUV', './images/2020-tesla-model-x-107-656e381e755b3.jpg'),
+            new Vehicle('Ford Mustang', 27000, 'Sports Car', './images/ford-mustang.jpg'),
+            new Vehicle('Hyundai Sonata', 24000, 'Sedan', './images/hyundai-sonata.jpg')
         ];
         this.displayItems();
     }
