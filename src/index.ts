@@ -132,8 +132,8 @@ class Shop {
             new Vehicle('Toyota Camry', 24000, 'Sedan', './images/2024-toyota-camry-102-64cbc4858e198.jpg'),
             
             new Vehicle('Tesla Model X', 89990, 'Electric SUV', './images/2020-tesla-model-x-107-656e381e755b3.jpg'),
-            new Vehicle('Ford Mustang', 27000, 'Sports Car', './images/ford-mustang.jpg'),
-            new Vehicle('Hyundai Sonata', 24000, 'Sedan', './images/hyundai-sonata.jpg')
+            new Vehicle('Ford Mustang', 27000, 'Sports Car', './images/merlin_138618171_15dc83e5-166d-4d74-aa33-78057a9d080b-superJumbo.jpg'),
+            new Vehicle('Hyundai Sonata', 24000, 'Sedan', './images/The-New-2022-Hyundai-Sonata.jpg')
         ];
         this.displayItems();
     }
