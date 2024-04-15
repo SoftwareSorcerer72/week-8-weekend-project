@@ -1,0 +1,15 @@
+.hidden { display: none; }
+body {
+    display: flex;
+    justify-content: space-between; /* Aligns children (shop and cart) side by side */
+    padding: 10px;
+}
+#shop-section, #cart-section {
+    flex: 1;
+    margin: 5px;
+}
+#cart-section {
+    border: 2px solid #ccc; /* Gives the cart section a distinct border */
+    padding: 10px;
+    min-width: 300px; /* Ensures the cart doesn't become too narrow */
+}
